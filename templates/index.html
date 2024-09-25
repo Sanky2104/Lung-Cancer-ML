@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Cancer by Sans and Mauny</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div style="color:black;" class="container">
+        <h2 class='container-heading'><span class="heading_font" style="color:white">Lung Cancer Detection by Sans and Maunyyy</span></h2>
+    </div>
+
+    <div style="color:black;" class="ml-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <h3>Gender</h3>
+            <input id="first" name="gender" placeholder="Gender" required="required">
+            <br>
+            <h3>Age</h3>
+            <input id="second" name="age" placeholder="Age" required="required">
+            <br>
+            <h3>Smoking</h3>
+            <input id="third" name="smoking" placeholder="Smoking" required="required">
+            <br>
+            <h3>Yellow Fingers</h3>
+            <input id="fourth" name="yellow_fingers" placeholder="Yellow Fingers" required="required">
+            <br>
+            <h3>Anxiety</h3>
+            <input id="fifth" name="anxiety" placeholder="Anxiety" required="required">
+            <br>
+            <h3>Peer Pressure</h3>
+            <input id="sixth" name="peer_pressure" placeholder="Peer Pressure" required="required">
+            <br>
+            <h3>Chronic Disease</h3>
+            <input id="seventh" name="chronic_disease" placeholder="Chronic Disease" required="required">
+            <br>
+            <h3>Fatigue</h3>
+            <input id="eight" name="fatigue" placeholder="Fatigue" required="required">
+            <br>
+            <h3>Allergy</h3>
+            <input id="ninth" name="allergy" placeholder="Allergy" required="required">
+            <br>
+            <h3>Wheezing</h3>
+            <input id="ninth" name="wheezing" placeholder="Wheezing" required="required">
+            <br>
+            <h3>Alcohol Consuming</h3>
+            <input id="ninth" name="alcohol_consuming" placeholder="Alcohol Consuming" required="required">
+            <br>
+            <h3>Coughing</h3>
+            <input id="ninth" name="coughing" placeholder="Coughing" required="required">
+            <br>
+            <h3>Shortness Of Breath</h3>
+            <input id="ninth" name="shortness_of_breath" placeholder="Shortness Of Breath" required="required">
+            <br>
+            <h3>Swallowing difficulty</h3>
+            <input id="ninth" name="swallowing_difficulty" placeholder="Swallowing Difficulty" required="required">
+            <br>
+            <h3>Chest Pain</h3>
+            <input id="ninth" name="chest_pain" placeholder="Chest Pain" required="required">
+            <br>
+            <br>
+            <br>
+            <button id="sub" type="submit ">Submit</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class='footer-description' style="color:whitesmoke">©2024 Sans&Maunyyy</p>
+
+        </form>
+    </div>
+
+
+
+
+<style>
+
+/* Background Image */
+body
+{
+background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTXH6m-Nj0vG6avIDMr5cVTiexJekjWeCn5w&s");
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+
+}
+
+h3{
+    color: white;
+}
+
+/* Color */
+body{
+	font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* Heading Font */
+.container-heading{
+    margin: 0;
+}
+
+.heading_font{
+    color: black;
+	font-family: 'Pacifico', cursive;
+	font-size: 50px;
+	font-weight: normal;
+}
+
+
+
+/* Box */
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            width: 160px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            width: 220px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            width: 230px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            width: 190px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #sixth {
+            border-radius: 14px;
+            height: 25px;
+            width: 150px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #seventh {
+            border-radius: 14px;
+            height: 25px;
+            width: 190px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #eight {
+            border-radius: 14px;
+            height: 25px;
+            width: 180px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #ninth {
+            border-radius: 14px;
+            height: 25px;
+            width: 190px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+/* Submit Button */
+#sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+
+
+
+
+
+</style>
+
+
+</body>
+
+</html>
+
+
