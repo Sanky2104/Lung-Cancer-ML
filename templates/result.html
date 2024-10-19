@@ -6,12 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{url_for('predict')}}", method="post">
-    {% if prediction == "YES" %}
-    <h1>YOU HAVE LUNG CANCER</h1>
-    {% else %}
-    <h1>YOU DONT HAVE LUNG CANCER</h1>
-    {% endif %}
-</form>
+    <form action="{{ url_for('predict') }}" method="post">
+        {% if prediction == "YES" %}
+        <h1>YOU HAVE LUNG CANCER</h1>
+        {% else %}
+        <h1>YOU DONT HAVE LUNG CANCER</h1>
+        {% endif %}
+    </form>
 </body>
 </html>

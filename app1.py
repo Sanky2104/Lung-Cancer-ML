@@ -1,45 +1,12 @@
-# Importing flask module in the project is mandatory
-# An object of Flask class is our WSGI application.
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template
 import pickle
 import numpy as np
-import boto3
-from flask_bcrypt import Bcrypt
-from flask_session import Session
-from urllib.parse import urlencode
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'supersecretkey'
-app.config['SESSION_TYPE'] = 'filesystem'
-Session(app)
-bcrypt = Bcrypt(app)
-
 model = pickle.load(open('logistic_regression_model.pkl', 'rb'))
 
-COGNITO_DOMAIN = "lungcancerml.auth.us-east-1.amazoncognito.com"  # Your Cognito domain, e.g., myapp.auth.us-east-1.amazoncognito.com
-COGNITO_CLIENT_ID = "3j1sid5k2u9qbre4k7f9nafemo"
-COGNITO_REDIRECT_URI = "http://localhost:5000/callback"  # Your redirect URI
-# COGNITO_CLIENT_SECRET = "your_client_secret"  # If applicable
-COGNITO_AUTH_URL = f"https://{COGNITO_DOMAIN}/oauth2/authorize"
-COGNITO_TOKEN_URL = f"https://{COGNITO_DOMAIN}/oauth2/token"
-COGNITO_LOGOUT_URL = f"https://{COGNITO_DOMAIN}/logout"
-
 @app.route('/', methods=['GET'])
-def login():
-    if 'access_token' in session:
-        return render_template('index.html')
-    
-    # If not logged in, redirect to Cognito Hosted UI for authentication
-    cognito_login_url = COGNITO_AUTH_URL + "?" + urlencode({
-        'client_id': COGNITO_CLIENT_ID,
-        'response_type': 'code',
-        'scope': 'openid profile email',
-        'redirect_uri': COGNITO_REDIRECT_URI
-    })
-    return redirect(cognito_login_url)
-
-@app.route('/home', methods=['GET'])
 def Home():
     return render_template('index.html')
 
