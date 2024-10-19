@@ -40,7 +40,20 @@ def add_user():
 
 @app.route('/breathewise', methods=['GET', 'POST'])
 def Breathewise():
-    return render_template('index.html')
+    email = request.form['email']
+    password = request.form['password']
+    
+    # Query the database to check if the user exists
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM users WHERE email = %s', (email,))
+    user = cursor.fetchone()
+    if user and user['password'] == password:  # For security, use hashing in production
+        # User authenticated successfully
+        # return "Login successful! Welcome, {}".format(user['name'])
+        return render_template('index.html')
+    else:
+        # User not found or password incorrect
+        return "Invalid email or password. Please try again."
 
 @app.route('/predict', methods=['POST'])
 def predict():
